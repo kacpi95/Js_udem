@@ -1,12 +1,8 @@
-let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+let array = [-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6];
 
-let index = 0;
 let sum = 0;
 
-while (index < nums.length) {
-	if (nums[index] > 5) {
-		sum += nums[index];
-	}
-	index++;
+for (let i = 0; i < array.length; i++) {
+	sum += array[i];
+	console.log(sum);
 }
-console.log(sum);
