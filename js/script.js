@@ -1,13 +1,12 @@
-let sum = -6;
+let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-while (sum < 6) {
-	console.log(sum);
-	sum++;
+let index = 0;
+let sum = 0;
+
+while (index < nums.length) {
+	if (nums[index] > 5) {
+		sum += nums[index];
+	}
+	index++;
 }
-
-let sums = 90;
-
-while (sums > 75) {
-	console.log(sums);
-	sums--;
-}
+console.log(sum);
