@@ -1,8 +1,15 @@
-const averageValue = (a, b, c, d) => {
-	let sum = (a + b + c + d) / 4;
-	return sum;
+const createTv = (brand, screeSize, color) => {
+	if (color != "white" && color != "black" && color != "silver") return null;
+
+	const obj = {
+		brand: brand,
+		screeSize: screeSize,
+		color: color,
+	};
+	return obj;
 };
 
-console.log(averageValue(2, 4, 8, 10));
-console.log(averageValue(30, 60, 90, 120));
-console.log(averageValue(5, 10, 15, 20));
+console.log(createTv("Sony", 42, "black"));
+console.log(createTv("Sharp", 32, "white"));
+console.log(createTv("Lenovo", 50, "silver"));
+console.log(createTv("Lenovo", 42, "green"));
