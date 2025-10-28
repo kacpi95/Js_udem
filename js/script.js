@@ -1,23 +1,19 @@
-const createComputer = (cpu, gpu, ram, disk) => {
-	let pc = {
-		cpu: cpu,
-		gpu: gpu,
-		ram: ram,
-		disk: disk,
+const createUser = (name, contact) => {
+	let user = {
+		name: name,
+		email: null,
+		telephone: null,
 	};
-	return pc;
+	if (typeof contact == "string") {
+		user.email = contact;
+	} else if (typeof contact == "number") {
+		user.telephone = contact;
+	}
+	return user;
 };
 
-const createLaptop = (obj) => {
-	let lap = {
-		...obj,
-		type: "laptop",
-		weight: 2.5,
-	};
-	return lap;
-};
+let user1 = createUser("Kacper", "kacper@example.pl");
+let user2 = createUser("Ola", 88888888);
 
-const myPc = createComputer("amd", "nvidia", "32gp", "1tb");
-
-console.log(myPc);
-console.log(createLaptop(myPc));
+console.log(user1);
+console.log(user2);
