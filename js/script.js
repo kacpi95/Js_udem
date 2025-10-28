@@ -1,15 +1,8 @@
-const createTv = (brand, screeSize, color) => {
-	if (color != "white" && color != "black" && color != "silver") return null;
-
-	const obj = {
-		brand: brand,
-		screeSize: screeSize,
-		color: color,
-	};
-	return obj;
+const multiplay = (x, y) => {
+	let sum = x * y;
+	return sum;
 };
 
-console.log(createTv("Sony", 42, "black"));
-console.log(createTv("Sharp", 32, "white"));
-console.log(createTv("Lenovo", 50, "silver"));
-console.log(createTv("Lenovo", 42, "green"));
+console.log(multiplay(3, 6));
+
+let test = console.log(multiplay(10, 25));
