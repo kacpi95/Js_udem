@@ -1,8 +1,8 @@
-let sum = 0;
+const multiplay = (a, b) => {
+	let sum = a * b;
+	return sum;
+};
 
-for (let i = 0; i <= 14; i++) {
-	if (i % 2 == 0) {
-		sum += i;
-	}
-}
-console.log(sum);
+console.log(multiplay(3, 10));
+console.log(multiplay(120, 56));
+console.log(multiplay(1234, 1234));
