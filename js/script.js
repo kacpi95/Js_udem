@@ -1,8 +1,14 @@
-const multiplay = (x, y) => {
-	let sum = x * y;
-	return sum;
+const greatThan = (arr, callback) => {
+	for (let i = 0; i < arr.length; i++) {
+		let index = arr[i];
+		if (index > 6) {
+			callback(index);
+		}
+	}
 };
 
-console.log(multiplay(3, 6));
+const tab = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-let test = console.log(multiplay(10, 25));
+greatThan(tab, function (data) {
+	console.log("Data :", data);
+});
