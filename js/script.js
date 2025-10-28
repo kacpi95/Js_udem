@@ -1,9 +1,23 @@
-const modifyArr = (arr) => {
-	for (let i = 0; i < arr.length; i++) {
-		arr[i] *= 3;
-	}
+const createComputer = (cpu, gpu, ram, disk) => {
+	let pc = {
+		cpu: cpu,
+		gpu: gpu,
+		ram: ram,
+		disk: disk,
+	};
+	return pc;
 };
 
-const tab = [1, 2, 3, 4, 5, 6, 7];
-modifyArr(tab);
-console.log(tab);
+const createLaptop = (obj) => {
+	let lap = {
+		...obj,
+		type: "laptop",
+		weight: 2.5,
+	};
+	return lap;
+};
+
+const myPc = createComputer("amd", "nvidia", "32gp", "1tb");
+
+console.log(myPc);
+console.log(createLaptop(myPc));
