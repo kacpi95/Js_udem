@@ -1,18 +1,28 @@
-function Car(brand, name, color) {
-	this.brand = brand;
-	this.name = name;
-	this.color = color;
-	this.year = 2010;
+function Magazin(title) {
+	this.title = title;
+	this.adverts = [];
 
-	this.printData = function () {
-		console.log(this.brand, this.name, this.color, this.year);
+	this.addAdvert = function (name, page) {
+		let obj = {
+			name: name,
+			page: page,
+		};
+		this.adverts.push(obj);
+	};
+	this.printAdverts = function () {
+		for (let i = 0; i < this.adverts.length; i++) {
+			const mag = this.adverts[i];
+
+			console.log(`Advert: ${mag.name}, ${mag.page}`);
+		}
 	};
 }
 
-let car1 = new Car("BMW", "X1", "black");
-let car2 = new Car("Audi", "A8", "white");
+let magazine = new Magazin("WP");
+console.log(magazine);
 
-console.log(car1);
-car1.printData();
-console.log(car2);
-car2.printData();
+magazine.addAdvert("laptop", 2);
+magazine.addAdvert("Console", 5);
+magazine.addAdvert("PC", 15);
+
+magazine.printAdverts();
