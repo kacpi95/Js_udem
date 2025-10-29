@@ -1,45 +1,60 @@
-const tvFactor = {
-	name: "Factory",
+const school = {
+	name: "UJ",
 	city: "Krk",
-	employees: [],
-	brand: "Sharp",
-	addEmployees: function (name, surname) {
+	students: [],
+	addStudent: function (name, surname) {
 		const obj = {
 			name: name,
 			surname: surname,
-			email: `${name}.${surname}@gmail.com`,
 		};
-		this.employees[this.employees.length] = obj;
+		const index = this.students.length;
+		this.students[index] = obj;
 	},
-	showEmployees: function () {
-		console.log(this.name, "employees");
+	showStudents: function () {
+		if (this.students.length == 0) {
+			console.log("Szkoła nie ma studentów ");
+			return;
+		}
 
-		for (let i = 0; i < this.employees.length; i++) {
-			const e = this.employees[i];
-			console.log(e.name, e.surname, e.email);
+		for (let i = 0; i < this.students.length; i++) {
+			const stud = this.students[i];
+			console.log(stud.name, stud.surname);
 		}
 	},
-	makeTv: function (model, color) {
-		return {
-			id: `${model}-${color}-TV`,
-			brand: this.brand,
-			model: model,
-			color: color,
-		};
+	showStudentsByName: function (name) {
+		if (this.students.length == 0) {
+			console.log("Szkoła nie ma studentów ");
+			return;
+		}
+
+		for (let i = 0; i < this.students.length; i++) {
+			const stud = this.students[i];
+			if (stud.name === name) {
+				console.log(stud.name, stud.surname);
+			}
+		}
+		console.log("Imię studenta:", name);
+	},
+	getNumStudents: function () {
+		let numStudents = this.students.length;
+		return numStudents;
+	},
+	resetStudents: function () {
+		this.students = [];
 	},
 };
 
-tvFactor.addEmployees("Kacper", "Kowalski");
-tvFactor.addEmployees("Adam", "Nowal");
-console.log(tvFactor.employees);
+school.addStudent("Kacper", "Kowalski");
+school.addStudent("Kacper", "Nowak");
+school.addStudent("Asia", "Nowak");
+school.addStudent("Ola", "Adamska");
+console.log(school.students);
+school.showStudents();
 
-tvFactor.showEmployees();
+school.showStudentsByName("Kacper");
 
-const tv1 = tvFactor.makeTv("Sony", "black");
-console.log(tv1);
-const tv2 = tvFactor.makeTv("Samsung", "white");
-console.log(tv2);
+console.log(school.getNumStudents());
 
-tvFactor.name = "Factory Ltd.";
+school.resetStudents();
 
-console.log(tvFactor);
+console.log(school.getNumStudents());
