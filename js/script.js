@@ -1,20 +1,37 @@
-const user = {
-	_name: null,
+const truck = {
+	_brand: null,
+	_model: null,
+	_topSpeed: 0,
 
-	set name(newValue) {
-		if (newValue.length > 2) {
-			this._name = newValue;
+	set brand(newValue) {
+		this._brand = newValue;
+	},
+	get brand() {
+		return this._brand;
+	},
+
+	set model(newValue) {
+		this._model = newValue;
+	},
+
+	get model() {
+		return this._model;
+	},
+	set topSpeed(newValue) {
+		if (newValue >= 0) {
+			this._topSpeed = newValue;
 		} else {
-			console.log("Name to short");
+			console.log("Speed to low");
 		}
 	},
 
-	get name() {
-		return this._name;
+	get topSpeed() {
+		return console.log(`${this._brand} ${this._model} ${this._topSpeed}`);
 	},
 };
 
-user.name = "Kacper";
-console.log(user.name);
-user.name = "Adam";
-console.log(user.name);
+truck.brand = "Kenworth";
+truck.model = "w800";
+truck.topSpeed = 120;
+
+console.log(truck);
