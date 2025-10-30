@@ -1,37 +1,14 @@
-const truck = {
-	_brand: null,
-	_model: null,
-	_topSpeed: 0,
+const numbers = [2, 5, 7, 10];
 
-	set brand(newValue) {
-		this._brand = newValue;
-	},
-	get brand() {
-		return this._brand;
-	},
+let new1 = numbers.reduce((a, b) => {
+	return a + b;
+});
+console.log(new1);
 
-	set model(newValue) {
-		this._model = newValue;
-	},
+let new2 = numbers.map((el) => {
+	return el * 2;
+});
+console.log(new2);
 
-	get model() {
-		return this._model;
-	},
-	set topSpeed(newValue) {
-		if (newValue >= 0) {
-			this._topSpeed = newValue;
-		} else {
-			console.log("Speed to low");
-		}
-	},
-
-	get topSpeed() {
-		return console.log(`${this._brand} ${this._model} ${this._topSpeed}`);
-	},
-};
-
-truck.brand = "Kenworth";
-truck.model = "w800";
-truck.topSpeed = 120;
-
-console.log(truck);
+let new3 = numbers.filter((el) => el % 2 === 0);
+console.log(new3);
