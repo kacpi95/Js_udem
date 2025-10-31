@@ -30,5 +30,16 @@ console.log(new5);
 let new6 = students.every((el) => el.grade >= 3);
 console.log(new6);
 
-let new7 = students.find((el)=> el.name === 'Ola');
+let new7 = students.find((el) => el.name === "Ola");
 console.log(new7);
+
+let array = [3, 4, 5, 2, 5];
+
+let new8 = array.reduce((a, b) => a + b, 0) / array.length;
+
+console.log(new8);
+
+let new9 = array.filter((el) => {
+	return el === 5;
+});
+console.log(new9);
