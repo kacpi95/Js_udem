@@ -43,3 +43,24 @@ let new9 = array.filter((el) => {
 	return el === 5;
 });
 console.log(new9);
+
+tab = [1, 2, 3, 4, 5, 6];
+
+let new10 = tab.filter((el) => el % 2 === 0).map((el) => el * el);
+console.log(new10);
+
+let new11 = students.sort((a, b) => a.grade - b.grade);
+console.log(new11);
+
+let new12 = students.filter((el) => el.grade >= 3).map((el) => el.name);
+
+console.log(new12);
+
+tab = [1, 3, 5, 7, 9, 10];
+
+let new13 = tab
+	.filter((el) => el > 5)
+	.map((el) => el * 2)
+	.reduce((a, b) => a + b);
+
+console.log(new13);
