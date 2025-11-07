@@ -38,3 +38,28 @@ class Person {
 
 const person = new Person("Jan", "Kowalski");
 console.log(person.fullName);
+
+class BankAccount {
+	constructor(balance) {
+		this.balance = balance;
+	}
+
+	deposit(amount) {
+
+    }
+	withdraw(amount) {
+		if (this.balance >= amount) {
+			console.log(`Możliwa wypłata środków`);
+		} else {
+			console.log(`Brak środków na koncie `);
+		}
+	}
+	getBalance() {
+		console.log(`Saldo ${this.balance}`);
+	}
+}
+
+const account = new BankAccount(10);
+
+account.getBalance();
+account.withdraw(9);
