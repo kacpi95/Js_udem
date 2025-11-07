@@ -44,9 +44,7 @@ class BankAccount {
 		this.balance = balance;
 	}
 
-	deposit(amount) {
-
-    }
+	deposit(amount) {}
 	withdraw(amount) {
 		if (this.balance >= amount) {
 			console.log(`Możliwa wypłata środków`);
@@ -63,3 +61,29 @@ const account = new BankAccount(10);
 
 account.getBalance();
 account.withdraw(9);
+
+class Rectangle {
+	constructor(witdh, height) {
+		this.width = witdh;
+		this.height = height;
+	}
+	getArea() {
+		if (this.width <= 0 || this.height <= 0) {
+			console.log(`Błędne dane`);
+		} else {
+			const sum = this.width * this.height;
+			console.log(`Pole prostokąta ${sum}`);
+		}
+	}
+	getPerimeter() {
+		if (this.width <= 0 || this.height <= 0) {
+			console.log(`Błędne dane`);
+		} else {
+			const sum = this.width * 2 + this.height * 2;
+			console.log(`Obwód prostokąta ${sum}`);
+		}
+	}
+}
+
+const rectangle = new Rectangle(2, 2);
+rectangle.getPerimeter();
