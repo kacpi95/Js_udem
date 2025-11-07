@@ -87,3 +87,28 @@ class Rectangle {
 
 const rectangle = new Rectangle(2, 2);
 rectangle.getPerimeter();
+
+class Circle {
+	constructor(radius) {
+		this.radius = radius;
+	}
+	getArea() {
+		if (this.radius <= 0) {
+			console.log(`Błędne dane`);
+		} else {
+			let sum = Math.PI * (this.radius * this.radius);
+			console.log(`Pole koła ${sum}`);
+		}
+	}
+	getCircumferance() {
+		if (this.radius <= 0) {
+			console.log(`Błędne dane`);
+		} else {
+			let sum = 2 * Math.PI * this.radius;
+			console.log(`Obwód koła ${sum}`);
+		}
+	}
+}
+const circle = new Circle(3);
+circle.getArea();
+circle.getCircumferance();
